@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Pixel Tracking</title>
+</head>
+<body>
+    <h1>Welcome to Pixel Tracking Test</h1>
+    <button id="trackButton">Click Me!</button>
+
+    <!-- Add your tracking pixel here -->
+    <img src="https://example.com/pixel" style="display:none;" id="trackingPixel"/>
+
+    <script>
+        // Track the button click and trigger the pixel
+        document.getElementById('trackButton').addEventListener('click', function() {
+            // Here, you would send an event to your tracking pixel
+            var pixel = document.getElementById('trackingPixel');
+            pixel.src = pixel.src + '?click=1';  // Trigger the pixel with a custom query parameter (or any other data you need)
+            alert("Button clicked! Pixel should fire now.");
+        });
+    </script>
+</body>
+</html>
